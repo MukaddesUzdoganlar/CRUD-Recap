@@ -15,7 +15,7 @@ export default function FlakeForm({ onSubmit, formName, defaultData }) {
         defaultValue={defaultData?.name}
       />
 
-      <Label htmlFor="name">Brand</Label>
+      <Label htmlFor="brand">Brand</Label>
       <Input
         type="text"
         id="brand"
@@ -23,7 +23,7 @@ export default function FlakeForm({ onSubmit, formName, defaultData }) {
         defaultValue={defaultData?.brand}
       />
 
-      <Label htmlFor="name">Ingredients</Label>
+      <Label htmlFor="ingredients">Ingredients</Label>
       <Input
         type="text"
         id="ingredients"
@@ -31,7 +31,7 @@ export default function FlakeForm({ onSubmit, formName, defaultData }) {
         defaultValue={defaultData?.ingredients}
       />
 
-      <Label htmlFor="name">Nutritionals</Label>
+      <Label htmlFor="nutritional_table">Nutritionals</Label>
       <Input
         type="text"
         id="nutritional_table"
@@ -39,7 +39,7 @@ export default function FlakeForm({ onSubmit, formName, defaultData }) {
         defaultValue={defaultData?.nutritional_table}
       />
 
-      <Label htmlFor="name">Image</Label>
+      <Label htmlFor="image_url">Image</Label>
       <Input
         type="text"
         id="image_url"
