@@ -1,31 +1,28 @@
 import styled from "styled-components";
-import { exampleflakes } from "@/lib/tempData";
 import FlakeCard from "./FlakeCard";
 import Link from "next/link";
+import useSWR from "swr";
 
 export default function FlakeList() {
-  const flakes = exampleflakes;
-  // const flakes = useSWR("/api/products");
+  const { data: flakes, isLoading, error } = useSWR("/api/flakes");
 
-  // if (isLoading) {
-  //   return <h1>Loading...</h1>;
-  // }
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
-  // if (!data) {
-  //   return;
-  // }
+  if (!flakes) {
+    return;
+  }
 
   return (
     <>
       <StyledList>
         {flakes.map((flake) => (
           <li key={flake._id}>
-            <Link href={`/flake/${flake._id}`}>
+            <Link href={`/flakes/${flake._id}`}>
               <FlakeCard
                 name={flake.name}
                 brand={flake.brand}
-                ingredients={flake.ingredients}
-                nutritional_table={flake.nutritional_table}
                 image_url={flake.image_url}
               ></FlakeCard>
             </Link>
